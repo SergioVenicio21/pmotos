@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}Novo usuário{% endblock %}
+
+{% block body %}
+<form action="/users/new_user" method="post" accept-charset="utf-8">
+    <input type="text" name="name" id="name" placeholder='Nome'/>
+    <input type="email" name="email" id="email" placeholder='Email'/>
+    <input type="text" name="cpf" id="cpf" placeholder='CPF'/>
+    <input type="text" name="rg" id="rg" placeholder='RG'/>
+    <input type="text" name="birthdate" id="birthdate" placeholder='Nascimento'/>
+    <button type='submit'>Salvar</button>
+</form>
+{% endblock %}

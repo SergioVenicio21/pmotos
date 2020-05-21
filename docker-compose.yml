@@ -1,0 +1,29 @@
+version: '3.1'
+
+
+services:
+  database:
+    image: postgres:latest
+    container_name: postgres_pmotos
+    restart: always
+    volumes: 
+      - /postgres_pmotos_volume
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_DB: pamotos
+      POSTGRES_USER: pamotos_user
+      POSTGRES_PASSWORD: pamotos_pwd
+      PGDATA: ./postgres_pmotos_volume
+  rabbit_mq:
+    container_name: rabbit_mq_pmotos
+    image: rabbitmq:3-management
+    hostname: rabbit_mq
+    ports:
+        - "15672:15672"
+        - "5672:5672"
+    environment:
+      RABBITMQ_ERLANG_COOKIE: pmotos
+      RABBITMQ_DEFAULT_USER: pmotos
+      RABBITMQ_DEFAULT_PASS: pmotos
+      RABBITMQ_DEFAULT_VHOST: "/"
