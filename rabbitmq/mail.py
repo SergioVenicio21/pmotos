@@ -10,8 +10,8 @@ from jinja2 import Environment, FileSystemLoader
 class Email:
     def __init__(self):
         self.server = 'smtp.gmail.com'
-        self._from = 'sergiovenicio2015@gmail.com'
-        self.pwd = 'emsssxnydvlhndqb'
+        self._from = 'eamil@gmail.com'
+        self.pwd = 'gmail_token'
 
     def load_template(self, template_name):
         env = Environment(loader=FileSystemLoader('templates/emails/'))
